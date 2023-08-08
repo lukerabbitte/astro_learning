@@ -1,0 +1,53 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import Main from "./Main.astro";
+
+type Props = MarkdownLayoutProps<{
+  // We are free to make a props type of our choice which contains attributes of certain types
+  title: string;
+  subtitle: string;
+  author: string;
+  image: string;
+  alt: string;
+}>;
+
+const { title, subtitle, author, image, alt } = Astro.props.frontmatter;
+---
+
+<Main title="Blog Page">
+
+    <flex>
+        <img
+            src={image}
+            alt={alt}
+            width="100%"
+            height="auto"
+            class="blog__image"
+        />
+    </flex>
+
+    <div class="title__strip">
+      <h1>{title}</h1>
+      <h5>by {author}</h5>
+    </div>
+
+    <h2>{subtitle}</h2>
+
+    <slot />
+</Main>
+
+<style>
+  
+    .blog__image {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .title__strip {
+      display: flex;
+      justify-content: space-between;
+      align-items:baseline;
+      flex-wrap: wrap;
+    }
+  
+  </style>

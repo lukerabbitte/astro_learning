@@ -1,0 +1,36 @@
+---
+// Main.astro contains stuff we want repeated across every page on the site - mostly metadata and navbar.
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import NavigationBar from "../components/NavigationBar.astro";
+
+type Props = {
+  title: string
+}
+
+const title = Astro.props;
+---
+
+<html lang="en"> {/* Here is where we can toggle different parent html classes.*/}
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Bleak Tribute Site" />
+    <title>{title}</title>
+
+  </head>
+
+  <body>
+    <main>
+    <NavigationBar />
+      {/* <Main> layout tag can be used elsewhere. This is a placeholder to show where child elements of these <Main> tags go.  */}
+      <slot/>
+      <Footer />
+    </main>
+  </body>
+</html>

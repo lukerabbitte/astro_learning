@@ -1,0 +1,51 @@
+html {
+    --background: white; /* Using css variables which we can call globally using var and -- */
+    --grey-200: #222222;
+    --grey-400: #444444;
+    --grey-600: #333333;
+    --grey-900: #111111;
+    --palette-1: #F7FFBC;
+  }
+  
+  html.dark {
+    /* Now simply changing the html root class automatically changes the color schemes */
+    --background: black;
+    --grey-200: #eaeaea;
+    --grey-400: #acacac;
+    --grey-600: #ffffff;
+    --grey-900: #fafafa;
+    --palette-1: #3D3E30;
+  }
+  
+  body {
+    --radius: 0.8rem;
+    --small-button-height: 0.5rem;
+    font-family: 'Roboto Mono', monospace;
+    padding: 1rem;
+    color: var(--grey-600);
+    background: var(--background);
+  }
+  
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  
+  main {
+    margin: auto;
+  }
+  
+  a {
+    color: var(--grey-400);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--grey-900);
+  }
+  
+  .bold-text {
+    font-weight: bold;
+  } 

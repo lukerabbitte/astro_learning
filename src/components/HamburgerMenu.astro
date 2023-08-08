@@ -1,0 +1,51 @@
+<div class="hamburger__menu" onclick="toggleMenu()">
+
+    <div class="hamburger__icon">
+      &#9776;
+    </div>
+
+    <ul class="menu__list">
+        <li>
+          <a href="/" class="bold-text">Home</a>
+        </li>
+    
+        <li>
+          <a href="/philosophy">Philosophy</a>
+        </li>
+    
+        <li>
+          <a href="/geologicalsurvey">Geological Survey</a>
+        </li>
+      </ul>
+  </div>
+  
+
+<style>
+
+    .menu__list {
+        display: none;
+        list-style: none;
+        padding: 0;
+    }
+
+    .hamburger__icon {
+        display: none;
+        cursor: pointer;
+        padding: var(--small-button-height);
+        font-size: 0.5rem;
+    }
+
+    .show-menu .menu__list {
+        display: block;
+    }
+</style>
+
+<script>
+    function toggleMenu() {
+        var menuList = document.querySelector('.menu__list');
+
+        if (menuList) {
+            menuList.classList.toggle('show-menu');
+        }
+    }
+</script>
