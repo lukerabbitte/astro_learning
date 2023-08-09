@@ -4,7 +4,7 @@ title: Philosophy
 subtitle: Cause of and solution to all of life's problems
 author: Mark Hamill
 image: /images/wartime-compressed-cropped.jpg
-alt: A record collection
+alt: Wartime poster
 layout: ../layouts/Blog.astro
 
 ---

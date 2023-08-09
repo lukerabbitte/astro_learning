@@ -4,6 +4,7 @@ title: Geological Survey
 subtitle: An examination of something that should only be examined by experts
 author: Lair Dwelr
 image: /images/spacecraft-compressed-cropped.jpg
+alt: A record collection
 layout: ../layouts/Blog.astro
 
 ---

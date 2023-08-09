@@ -3,6 +3,15 @@ import Main from "../layouts/Main.astro";
 import Cards from "../components/Cards.astro";
 
 const profilePicture = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/A_bull_moose_animal_mammal.jpg/1280px-A_bull_moose_animal_mammal.jpg";
+
+const blogs = await Astro.glob<{
+
+	title: string;
+	subtitle: string;
+	author: string;
+	image: string;
+	alt: string;
+}>("../pages/blogs/*.md");
 ---
 	
 <Main title="Index Page">
@@ -67,5 +76,18 @@ const profilePicture = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d
 			<h2>Conclusion</h2>
 			<p>In the heart of the untamed wilderness, Moose Meagher will forever remain a symbol of nature's grace, strength, and wisdom. His journey through life captivated all who knew of him, leaving an everlasting impression on the ecosystem he protected and the people who were fortunate enough to cross paths with him. As long as the wilderness thrives, Moose Meagher's legacy will endure, a reminder of the beauty and majesty that resides within nature's embrace.</p>
 		</div>
+
+		<ol>
+			{
+			  blogs.map((blog) => (
+				<li class="blogs__list">
+				  <a href={blog.url} class="blog__link">
+					{blog.frontmatter.title}
+				  </a>
+				</li>
+			  ))
+			}
+		</ol>
+
 	</div>
 </Main>
