@@ -31,7 +31,11 @@ const { title, subtitle, author, image, alt } = Astro.props.frontmatter;
       <h5>by {author}</h5>
     </div>
 
-    <h2>{subtitle}</h2>
+    <div class="subtitle__strip">
+      <h2>
+        {subtitle}
+      </h2>
+    </div>
 
     <slot />
 </Main>
@@ -39,7 +43,7 @@ const { title, subtitle, author, image, alt } = Astro.props.frontmatter;
 <style>
   
     .blog__image {
-      max-width: 100%;
+      max-width: 30%;
       border-radius: 10px;
     }
 

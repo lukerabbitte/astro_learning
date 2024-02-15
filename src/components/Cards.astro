@@ -11,7 +11,7 @@ const { cards } = Astro.props;
 
 <div class="cards">
     <!-- Dynamically render multiple Card components and spread the required card props -->
-    {cards.map((card) => <Card {...card} />)}
+    {cards.map((card: CardProp) => <Card {...card} />)}
 </div>
 
 <style>

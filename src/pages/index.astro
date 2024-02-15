@@ -1,8 +1,7 @@
 ---
 import Main from "../layouts/Main.astro";
 import Cards from "../components/Cards.astro";
-
-const profilePicture = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/A_bull_moose_animal_mammal.jpg/1280px-A_bull_moose_animal_mammal.jpg";
+import TextLogo from "../components/TextLogo.astro";
 
 const blogs = await Astro.glob<{
 
@@ -16,67 +15,39 @@ const blogs = await Astro.glob<{
 	
 <Main title="Index Page">
 	<div class="profile">
-		<img
-			src={profilePicture}
-			class="profilePicture"
-			alt="My profile picture"
-			width=300px
-			height=auto
-		/>
+
+		<TextLogo textLogoName="Locomote"/>
+
+		<div class="landing__page__description">
+			<p>The scientific appreciation of movement.</p>
+		</div>
 
 		<Cards
 			cards={[
 				{
-					title: "Wikimedia",
-					to: "https://wikimedia.org",
+					title: "Horses in Motion",
+					to: "https://en.wikipedia.org/wiki/Horse",
 					gradientStart: "#FFFDD8",
 					gradientEnd: "#D8FFFB"
 				},
 
 				{
-					title: "Astro",
-					to: "https://docs.astro.build/en/core-concepts/astro-components/#component-props",
+					title: "Flowing of Guinness",
+					to: "https://en.wikipedia.org/wiki/Guinness",
 					gradientStart: "#D8E8FF",
 					gradientEnd: "#FCD8FF"
 				},
 
 				{
-					title: "Translate",
-					to: "https://translate.google.com/",
+					title: "Tissue Growth",
+					to: "https://en.wikipedia.org/wiki/Tissue_growth",
 					gradientStart: "#FE9D98",
 					gradientEnd: "#F1FE98"
 				}
 			]}
 		/>
 
-		<div class="frontPageStory">
-			<h1>A tale of Moose Meagher</h1>
-
-			<h2>Introduction</h2>
-			<p>In the heart of the vast wilderness, a majestic moose named Moose Meagher roamed freely, captivating all who crossed paths with him. Moose Meagher was no ordinary moose; he possessed an aura of grandeur and wisdom that made him stand out among the other creatures of the forest. This article will explore the fascinating life and adventures of Moose Meagher, a symbol of nature's magnificence.</p>
-
-			<h2>Early Days in the Forest</h2>
-			<p>Born in a serene and secluded corner of the wilderness, Moose Meagher's story began with a tender vulnerability. His mother, a gentle and nurturing moose, guided him through his first steps in the forest. As he grew, his lanky legs supported a sturdy frame, crowned with antlers that seemed to reach the sky. Moose Meagher's presence was becoming increasingly remarkable, and his reputation in the animal kingdom spread like wildfire.</p>
-
-			<h2>The Guardian of the Forest</h2>
-			<p>Moose Meagher soon earned the title of "Guardian of the Forest." He took on the responsibility of protecting the flora and fauna from any harm, even if it meant standing against predators much larger than himself. With a combination of grace and strength, Moose Meagher became a force to be reckoned with, and his mere presence kept other animals in awe and respect.</p>
-
-			<h2>Social Interactions</h2>
-			<p>Despite his larger-than-life presence, Moose Meagher possessed a gentle and friendly nature. He was known to be approachable, and many forest dwellers sought his advice and wisdom. From tiny birds to lumbering bears, all creatures felt comforted in Moose Meagher's presence, knowing they were safe under his watchful eye.</p>
-
-			<h2>Seasonal Wonders</h2>
-			<p>As the seasons changed, Moose Meagher adapted with ease. In the summer, he relished the lush vegetation, providing an example of contentment amidst plenty. During autumn, his antlers adorned the vibrant colors of falling leaves, turning him into a living masterpiece of nature's artistry. In winter, his endurance allowed him to navigate the snow-laden terrain, proving himself as an embodiment of resilience in the face of adversity.</p>
-
-			<h2>A Friend to the Wanderers</h2>
-			<p>Many human travelers, seeking solitude and a connection with nature, stumbled upon Moose Meagher during their journeys. He became a symbol of the untamed wilderness, leaving an indelible mark on their hearts and inspiring them to protect the environment they had come to cherish.</p>
-
-			<h2>Conservation and Legacy</h2>
-			<p>Moose Meagher's fame eventually caught the attention of wildlife enthusiasts and conservationists alike. They rallied to ensure that the wilderness he called home remained untouched and protected for generations to come. His legacy became a driving force behind numerous conservation efforts, aiming to preserve the habitats of not only moose but all creatures of the wild.</p>
-
-			<h2>Conclusion</h2>
-			<p>In the heart of the untamed wilderness, Moose Meagher will forever remain a symbol of nature's grace, strength, and wisdom. His journey through life captivated all who knew of him, leaving an everlasting impression on the ecosystem he protected and the people who were fortunate enough to cross paths with him. As long as the wilderness thrives, Moose Meagher's legacy will endure, a reminder of the beauty and majesty that resides within nature's embrace.</p>
-		</div>
-
+		<!--
 		<ol>
 			{
 			  blogs.map((blog) => (
@@ -87,7 +58,14 @@ const blogs = await Astro.glob<{
 				</li>
 			  ))
 			}
-		</ol>
+		</ol>	
+		 -->
 
 	</div>
 </Main>
+
+<style>
+	.blogs__list {
+		list-style: none;
+	}
+</style>
