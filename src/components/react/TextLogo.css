@@ -1,0 +1,20 @@
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    60% { transform: translateX(10%); }
+    100% { transform: translateX(0); }
+}
+
+.text__logo__container {
+    margin: auto 0 0 auto;
+    display: flex;
+}
+
+.text__logo {
+    font-size: 4em;
+    display: flex;
+    width: 200%;
+}
+
+.text__logo.animate {
+    animation: scroll 5s forwards;
+}
